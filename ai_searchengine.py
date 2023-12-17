@@ -34,8 +34,7 @@ def fileList(source):
                 matches.append(os.path.join(root, filename))
     return matches
 
-#Indexes given folder: Goes through the list of file paths using fileList 
-# then scans the images with the OCR creating a pickle file and storing it in the directory then goes through the pickle file and creates embeddings (vectors) of the extracted texts and again stores it in the directory
+#Indexes given folder: Goes through the list of file paths using fileList then scans the images with the OCR creating a pickle file and storing it in the directory then goes through the pickle file and creates embeddings (vectors) of the extracted texts and again stores it in the directory
 def index():
 
     #Gets path from user input
@@ -64,8 +63,7 @@ def index():
 
         # Skips empty images
         except AttributeError:
-            # take comment out to see how many images are skipped
-            # print('Image was none')
+            # print('Image was none')  # take comment out to see how many images are skipped
             progress['value'] += (100/length_of_matches)
             continue
         
@@ -90,8 +88,7 @@ def index():
     with open('index.pkl','wb') as f:
             pickle.dump(datafile, f)
     
-    # Embeds sentences in datafile, this will create a set of NLP embeddings that 
-    # can be used to do ai searches with sentence similarity.
+    # Embeds sentences in datafile, this will create a set of NLP embeddings that can be used to do ai searches with sentence similarity.
     for nonstandardized_sentence in datafile[1]:
         standardized_sentence=nonstandardized_sentence.lower()
         sentences.append(standardized_sentence)
@@ -163,8 +160,7 @@ def AIsearch(query):
     # This is the indexed pictures paths list.
     dirList=list(datafile[0])
 
-    # Zips results together so that paths and embeddings order can be manipulated
-    # this part would need to be modified if tokenization was implemented
+    # Zips results together so that paths and embeddings order can be manipulated this part would need to be modified if tokenization was implemented
     nested_results= [[path, value] for path, value in zip(dirList, similarityList)]
     # Change to descending value order, so it displays the most relevant result at the top
     sorted_results= sorted(nested_results, key=lambda x: x[1], reverse=True)
@@ -183,9 +179,8 @@ def AIsearch(query):
     else:
         messagebox.showinfo("No results", "Sorry, no results were found.")
 
-    # Resets button so it's clickable again
+    # Resets button so it's clickable again, returns and display results
     startSearch.config(state='normal')
-    # Returns and display results
     return    
 
 
