@@ -12,3 +12,10 @@ This is in a way a (slower) competitor to the native Finder app, with the added 
 There is plenty of room for optimization such as implementing tokenization and improving speed but have yet to decide whether or not to pursue it.
 
 Another optimization could be made in automatically updating the data files when images are added or subtracted to a directory. Currently you have to re-scan the directory when images are added/subtracted.
+
+Old demo here (w/out AI Search):
+
+
+
+https://github.com/0xFpf/ai_search_engine/assets/74162889/ef59b84b-a96e-4c45-a8e9-d4be1a2a1196
+
