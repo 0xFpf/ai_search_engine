@@ -5,7 +5,7 @@ This was a project that I needed for myself due to the high amount of screenshot
 
 It also makes use of NLP AI so that you don't need the exact keywords to search for an image. If the image has keywords such as 'cardiovascular fitness' and you input 'heart strength' it will find that picture.
 
-I have made a (private) MacOS version that leverages Apple's ML Vision Core technology and also allows for all text files such as PDFs and Docs to be read and searched. 
+I have made a (private) MacOS version that leverages Apple's ML Vision Core technology and also allows for all text files such as PDFs and Docs to be read and searched. Executable size is ~50mb thanks to the fact it uses OS pre-installed OCR models. 
 
 This is in a way a (slower) competitor to the native Finder app, with the added benefit that it can scan images and do AI search.
 
